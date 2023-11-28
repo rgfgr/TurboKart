@@ -1,0 +1,6 @@
+@Turbokart.Presentation.Apis.TurbokartAPI_HostAddress = http://localhost:5081
+
+GET {{Turbokart.Presentation.Apis.TurbokartAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

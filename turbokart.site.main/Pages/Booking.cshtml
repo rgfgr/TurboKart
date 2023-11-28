@@ -1,0 +1,47 @@
+﻿@page
+@model BookingModel
+@{
+    ViewData["Title"] = "Booking";
+}
+<ol id="bookingProcess">
+    <li class="current"><span class="step-number">1</span>Booking</li>
+    <li><span class="step-number">2</span>Receipt</li>
+</ol>
+<h1>Place Your Booking</h1>
+<form method="post" class="text-center">
+    <div class="input-group mt-3">
+        <div class="col me-5">
+            <label asp-for="CustomerEmail" class="mt-5"></label>
+            <input type="email" asp-for="CustomerEmail" class="form-control" />
+            <span asp-validation-for="CustomerEmail"></span>
+        </div>
+        <div class="col">
+            <label asp-for="PhoneNumber" class="mt-5"></label>
+            <input type="tel" asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for="PhoneNumber"></span>
+        </div>
+    </div>
+    <div class="input-group mt-3">
+        <div class="col me-5">
+            <label asp-for="StartDate" class="mt-5"></label>
+            <input type="date" asp-for="StartDate" class="form-control" />
+            <span asp-validation-for="StartDate"></span>
+        </div>
+        <div class="col me-5">
+            <label asp-for="StartTime" class="mt-5"></label>
+            <input type="time" step="900" min="10:30" max="13:45" asp-for="StartTime" class="form-control" />
+            <span asp-validation-for="StartTime"></span>
+        </div>
+        <div class="col">
+            <label asp-for="People" class="mt-5"></label>
+            <input type="number" asp-for="People" class="form-control" min="1" max="20" />
+            <span asp-validation-for="People"></span>
+        </div>
+    </div>
+    <div class="input-group float-end w-auto">
+        <input type="submit" class="btn btn-success px-3 py-2" value="Book denne tid!" />
+    </div>
+</form>
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
